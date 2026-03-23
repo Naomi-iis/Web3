@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "Portable Bluetooth Speaker",
+    "subtitle": "Audio",
+    "price": 129.99,
+    "rating": 3.5,
+    "category": "Audio",
+    "images": [
+      "images/speaker1.jpg",
+      "images/speaker2.jpg",
+      "images/speaker3.jpg"
+    ],
+    "description": "Compact and powerful speaker with 360° surround sound. Waterproof design perfect for outdoor adventures.",
+    "specs": {
+      "Output Power": "20W",
+      "Battery Life": "12 hours",
+      "Connectivity": "Bluetooth 5.0",
+      "Water Resistance": "IPX7"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Premium Wireless Headphones",
+    "subtitle": "Audio",
+    "price": 299.99,
+    "rating": 4,
+    "category": "Audio",
+    "images": [
+      "images/headp1.jpg",
+      "images/headp2.jpg",
+      "images/headp3.jpg"
+    ],
+    "description": "Premium sound quality with active noise cancellation. Comfortable over-ear design for long listening sessions.",
+    "specs": {
+      "Driver Size": "40mm",
+      "Battery Life": "30 hours",
+      "Connectivity": "Bluetooth 5.0"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Professional DSLR Camera",
+    "subtitle": "Photography",
+    "price": 2499.99,
+    "rating": 5,
+    "category": "Photography",
+    "images": [
+      "images/camera1.jpg",
+      "images/camera2.jpg",
+      "images/camera3.jpg"
+    ],
+    "description": "Full-frame mirrorless camera with 45MP sensor. Ideal for professional photographers and videographers.",
+    "specs": {
+      "Sensor": "45MP Full-Frame",
+      "ISO Range": "100-51200",
+      "Video": "4K 60fps",
+      "Battery Life": "500 shots"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Professional Laptop Pro",
+    "subtitle": "Computers",
+    "price": 1899.99,
+    "rating": 4.5,
+    "category": "Computers",
+    "images": [
+      "images/note1.jpeg",
+      "images/note2.jpg",
+      "images/note3.jpg"
+    ],
+    "description": "High-performance laptop for professionals. Powerful processor and stunning display for any workflow.",
+    "specs": {
+      "Processor": "Intel Core i9",
+      "RAM": "32GB DDR5",
+      "Storage": "1TB NVMe SSD",
+      "Display": "15.6\" 4K OLED"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Smart Fitness Watch Ultra",
+    "subtitle": "Wearables",
+    "price": 449.99,
+    "rating": 4,
+    "category": "Wearables",
+    "images": [
+      "images/watch1.jpg",
+      "images/watch2.jpg",
+      "images/watch3.jpg"
+    ],
+    "description": "Advanced fitness tracking with health monitoring. Stay connected and on top of your health goals.",
+    "specs": {
+      "Display": "1.4\" AMOLED",
+      "Battery Life": "7 days",
+      "Water Resistance": "5ATM",
+      "GPS": "Built-in"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Ultra-Thin Tablet Pro",
+    "subtitle": "Tablets",
+    "price": 799.99,
+    "rating": 4.5,
+    "category": "Tablets",
+    "images": [
+      "images/tab1.jpg",
+      "images/tab2.jpg",
+      "images/tab3.jpg"
+    ],
+    "description": "Sleek and powerful tablet for work and entertainment. Stunning display with all-day battery life.",
+    "specs": {
+      "Display": "12.9\" Liquid Retina",
+      "Processor": "Apple M2",
+      "Storage": "256GB",
+      "Battery Life": "10 hours"
+    }
+  }
+]
