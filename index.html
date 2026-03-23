@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Website Design</title>
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!--header-->
+  <header class="site-header"></header>
+
+  <!--main-->
+  <main class="catalog-main">
+    <div class="container">
+      <div class="catalog-heading">
+        <h1>Premium Electronics</h1>
+        <p>Discover our curated collection of high-quality tech products</p>
+      </div>
+      <!-- toolbar -->
+      <div class="catalog-toolbar">
+        <div class="toolbar-left">
+          <button class="filter-btn-mobile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="21" y1="4" x2="14" y2="4"></line>
+              <line x1="10" y1="4" x2="3" y2="4"></line>
+              <line x1="21" y1="12" x2="12" y2="12"></line>
+              <line x1="8" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="20" x2="16" y2="20"></line>
+              <line x1="12" y1="20" x2="3" y2="20"></line>
+              <line x1="14" y1="2" x2="14" y2="6"></line>
+              <line x1="8" y1="10" x2="8" y2="14"></line>
+              <line x1="16" y1="18" x2="16" y2="22"></line>
+            </svg>
+            Filters
+          </button>
+          <span class="products-count" id="productsCount">6 products</span>
+        </div>
+
+        <div class="toolbar-right">
+          <span>Sort by:</span>
+          <select id="sortSelect" class="sort-select">
+            <option value="name-az">Name (A-Z)</option>
+            <option value="name-za">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+      </div>
+      <!--sidebar + grid-->
+      <div class="catalog-layout">
+        <!-- sidebar filters -->
+        <aside class="sidebar">
+          <div class="sidebar-inner">
+            <h2 class="sidebar-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="21" y1="4" x2="14" y2="4"></line>
+                <line x1="10" y1="4" x2="3" y2="4"></line>
+                <line x1="21" y1="12" x2="12" y2="12"></line>
+                <line x1="8" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="20" x2="16" y2="20"></line>
+                <line x1="12" y1="20" x2="3" y2="20"></line>
+                <line x1="14" y1="2" x2="14" y2="6"></line>
+                <line x1="8" y1="10" x2="8" y2="14"></line>
+                <line x1="16" y1="18" x2="16" y2="22"></line>
+              </svg>
+              Filters
+            </h2>
+
+            <div class="filters-group">
+              <!-- rating -->
+              <div class="filter-section">
+                <h3>Rating</h3>
+                <div class="rating-options">
+                  <div class="rating-option">
+                    <input type="checkbox" id="rating-5" class="custom-checkbox rating-checkbox" value="5">
+                    <label for="rating-5">5+ Stars</label>
+                  </div>
+                  <div class="rating-option">
+                    <input type="checkbox" id="rating-4" class="custom-checkbox rating-checkbox" value="4">
+                    <label for="rating-4">4+ Stars</label>
+                  </div>
+                  <div class="rating-option">
+                    <input type="checkbox" id="rating-3" class="custom-checkbox rating-checkbox" value="3">
+                    <label for="rating-3">3+ Stars</label>
+                  </div>
+                </div>
+              </div>
+              <!-- price range -->
+              <div class="price-range-section">
+                <h3>Price Range</h3>
+                <div class="range-track-wrapper">
+                  <div class="range-track">
+                    <div class="range-active" id="rangeActive"></div>
+                  </div>
+                  <input type="range" id="minRange" class="range-input" min="0" max="3000" value="0">
+                  <input type="range" id="maxRange" class="range-input" min="0" max="3000" value="2750">
+                </div>
+                <div class="price-labels">
+                  <span id="minPrice">$0</span>
+                  <span id="maxPrice">$3000</span>
+                </div>
+              </div>
+
+              <button class="clear-filters-btn" id="clearFilters">Clear All Filters</button>
+
+            </div>
+          </div>
+        </aside>
+
+        <!-- products grid js-->
+        <div class="products-area">
+          <div class="products-grid" id="productsGrid">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <!-- footer -->
+  <footer class="site-footer"></footer>
+</div>
+
+<!-- mobile filter overlay -->
+<div class="filter-overlay" id="filterOverlay"></div>
+
+<!-- mobile filter drawer -->
+<div class="filter-drawer" id="filterDrawer">
+  <div class="filter-drawer-header">
+    <h2>Filters</h2>
+    <button class="filter-drawer-close" id="filterDrawerClose" aria-label="Close filters">&#x2715;</button>
+  </div>
+  <div class="filter-drawer-body">
+
+    <!-- rating -->
+    <div class="filter-section">
+      <h3>Rating</h3>
+      <div class="rating-options">
+        <div class="rating-option">
+          <input type="checkbox" id="mob-rating-5" class="custom-checkbox mob-rating-checkbox" value="5">
+          <label for="mob-rating-5">5+ Stars</label>
+        </div>
+        <div class="rating-option">
+          <input type="checkbox" id="mob-rating-4" class="custom-checkbox mob-rating-checkbox" value="4">
+          <label for="mob-rating-4">4+ Stars</label>
+        </div>
+        <div class="rating-option">
+          <input type="checkbox" id="mob-rating-3" class="custom-checkbox mob-rating-checkbox" value="3">
+          <label for="mob-rating-3">3+ Stars</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- price range -->
+    <div class="price-range-section">
+      <h3>Price Range</h3>
+      <div class="range-track-wrapper">
+        <div class="range-track">
+          <div class="range-active" id="mob-rangeActive"></div>
+        </div>
+        <input type="range" id="mob-minRange" class="range-input" min="0" max="3000" value="0">
+        <input type="range" id="mob-maxRange" class="range-input" min="0" max="3000" value="2750">
+      </div>
+      <div class="price-labels">
+        <span id="mob-minPrice">$0</span>
+        <span id="mob-maxPrice">$3000</span>
+      </div>
+    </div>
+
+    <button class="clear-filters-btn filter-drawer-clear" id="mobClearFilters">Clear All Filters</button>
+  </div>
+</div>
+
+<script src="js/loadComponents.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/filterDrawer.js"></script>
+</body>
+</html>
