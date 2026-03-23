@@ -5,5 +5,5 @@ async function loadComponent(selector, path) {
   el.innerHTML = await res.text();
 }
 
-loadComponent('header', './components/header.html');
-loadComponent('footer', './components/footer.html');
+loadComponent('header', './components/header.tpl');
+loadComponent('footer', './components/footer.tpl');
