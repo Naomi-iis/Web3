@@ -5,7 +5,7 @@
     "subtitle": "Audio",
     "price": 129.99,
     "rating": 3.5,
-    "category": "Audio",
+    "category": "AUDIO",
     "images": [
       "images/speaker1.jpg",
       "images/speaker2.jpg",
@@ -25,7 +25,7 @@
     "subtitle": "Audio",
     "price": 299.99,
     "rating": 4,
-    "category": "Audio",
+    "category": "AUDIO",
     "images": [
       "images/headp1.jpg",
       "images/headp2.jpg",
@@ -44,7 +44,7 @@
     "subtitle": "Photography",
     "price": 2499.99,
     "rating": 5,
-    "category": "Photography",
+    "category": "PHOTOGRAPHY",
     "images": [
       "images/camera1.jpg",
       "images/camera2.jpg",
@@ -64,7 +64,7 @@
     "subtitle": "Computers",
     "price": 1899.99,
     "rating": 4.5,
-    "category": "Computers",
+    "category": "COMPUTERS",
     "images": [
       "images/note1.jpeg",
       "images/note2.jpg",
@@ -84,7 +84,7 @@
     "subtitle": "Wearables",
     "price": 449.99,
     "rating": 4,
-    "category": "Wearables",
+    "category": "WEARABLES",
     "images": [
       "images/watch1.jpg",
       "images/watch2.jpg",
@@ -104,7 +104,7 @@
     "subtitle": "Tablets",
     "price": 799.99,
     "rating": 4.5,
-    "category": "Tablets",
+    "category": "TABLETS",
     "images": [
       "images/tab1.jpg",
       "images/tab2.jpg",
@@ -116,6 +116,46 @@
       "Processor": "Apple M2",
       "Storage": "256GB",
       "Battery Life": "10 hours"
+    }
+  },
+    {
+    "id": 7,
+    "name": "Ultra-Thin Tablet Pro",
+    "subtitle": "Tablets",
+    "price": 5000,
+    "rating": 4.5,
+    "category": "TABLETS",
+    "images": [
+      "images/tab1.jpg",
+      "images/tab2.jpg",
+      "images/tab3.jpg"
+    ],
+    "description": "Sleek and powerful tablet for work and entertainment. Stunning display with all-day battery life.",
+    "specs": {
+      "Display": "12.9\" Liquid Retina",
+      "Processor": "Apple M2",
+      "Storage": "256GB",
+      "Battery Life": "10 hours"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Professional Laptop Pro",
+    "subtitle": "Computers",
+    "price": 10000,
+    "rating": 4.5,
+    "category": "COMPUTERS",
+    "images": [
+      "images/note1.jpeg",
+      "images/note2.jpg",
+      "images/note3.jpg"
+    ],
+    "description": "High-performance laptop for professionals. Powerful processor and stunning display for any workflow.",
+    "specs": {
+      "Processor": "Intel Core i9",
+      "RAM": "32GB DDR5",
+      "Storage": "1TB NVMe SSD",
+      "Display": "15.6\" 4K OLED"
     }
   }
 ]

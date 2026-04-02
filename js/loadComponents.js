@@ -5,5 +5,9 @@ async function loadComponent(selector, path) {
   el.innerHTML = await res.text();
 }
 
-loadComponent('header', './components/header.tpl');
-loadComponent('footer', './components/footer.tpl');
+async function initComponents() {
+  await loadComponent('header', './components/header.tpl');
+  if (typeof updateCartBadge === 'function') updateCartBadge();
+  loadComponent('footer', './components/footer.tpl');
+}
+initComponents();

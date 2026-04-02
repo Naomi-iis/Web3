@@ -30,7 +30,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #2563eb, #9333ea);
   font-weight: 700;
   font-size: 20px;
@@ -98,7 +98,7 @@
   position: relative;
 }
 
-/**/
+/*cart*/
 .cart-badge {
   display: none;
   position: absolute;
