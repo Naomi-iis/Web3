@@ -97,14 +97,14 @@
 .footer-col h3 {
   font-weight: 600;
   margin-bottom: 16px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .footer-links a {
@@ -120,16 +120,18 @@
 
 /*contact info*/
 .footer-contact {
-  margin-top: 16px;
+  margin-top: 10px;
   font-size: 14px;
 }
 
-.footer-contact p {
+.footer-col .footer-contact p {
   color: #4b5563;
-  margin-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 1px;
 }
 
-.footer-contact .phone {
+.footer-col .footer-contact .phone {
+  margin-bottom: 1px;
   font-weight: 600;
   color: #111827;
 }

@@ -10,7 +10,7 @@
       <a href="index.html">Products</a>
       <a href="#">Categories</a>
       <a href="#">Deals</a>
-      <a href="#">About</a>
+      <a href="about.html">About</a>
     </nav>
     <!--search and cart-->
     <!-- lupa -->

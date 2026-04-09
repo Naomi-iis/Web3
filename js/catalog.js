@@ -132,7 +132,7 @@ function initSlider() {
   const minLabel = document.getElementById('minPrice');
   const maxLabel = document.getElementById('maxPrice');
   const MIN_GAP = 50;
-  const MAX_VALч = window.PRICE_MAX;
+  const MAX_VAL = window.PRICE_MAX;
 
   minRange.max = MAX_VAL;
   maxRange.max = MAX_VAL;
