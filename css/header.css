@@ -102,16 +102,16 @@
 .cart-badge {
   display: none;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: -3px;
+  left: 25px;
   min-width: 17px;
   height: 17px;
   padding: 0 4px;
   border-radius: 9999px;
-  background: #ef4444;
+  background: #155dfc;
   color: #fff;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 17px;
   text-align: center;
   pointer-events: none;

@@ -113,7 +113,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.18s ease;
 }
 
 .gallery-main img.fade-out {
@@ -369,6 +369,10 @@ body {
   flex-shrink: 0;
 }
 
+.specs-toggle:hover{
+  text-decoration: underline;
+}
+
 .specs-toggle.open svg { transform: rotate(180deg); }
 
 .specs-body {
@@ -411,7 +415,7 @@ body {
   font-weight: 400;
 }
 
-/* ---- Related Products ---- */
+/* Related Products */
 .related-section { margin-top: 48px; }
 
 .related-title {
@@ -466,7 +470,9 @@ body {
   transition: transform 0.3s;
 }
 
-.related-card:hover .related-card-img img { transform: scale(1.05); }
+.related-card:hover 
+
+.related-card-img img { transform: scale(1.05); }
 
 .related-card-info { padding: 12px; }
 
