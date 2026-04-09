@@ -58,3 +58,35 @@ function updateCartBadge() {
     badge.classList.remove('visible');
   }
 }
+
+function initMobileMenu() {
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mobileNav');
+  if (!btn || !nav) return;
+
+  btn.addEventListener('click', function () {
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    nav.setAttribute('aria-hidden', !isOpen);
+  });
+
+  function closeMenu() {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('aria-hidden', 'true');
+  }
+
+  // close on outside click
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !nav.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // close on scroll
+  window.addEventListener('scroll', function () {
+    if (nav.classList.contains('open')) {
+      closeMenu();
+    }
+  }, { passive: true });
+}

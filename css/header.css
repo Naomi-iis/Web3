@@ -121,11 +121,6 @@
   display: block;
 }
 
-.icon-btn:hover {
-  background: #f3f4f6;
-  color: #111827;
-}
-
 .icon-btn svg {
   width: 20px;
   height: 20px;
@@ -140,5 +135,65 @@
 @media (min-width: 768px) {
   .menu-btn {
     display: none;
+  }
+}
+
+/* mobile nav drawer */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background: #fff;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-nav::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0 16px;
+}
+
+.mobile-nav.open {
+  max-height: 400px;
+}
+
+@media (max-width: 767px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.mobile-nav-links a {
+  padding: 8px 16px;
+  color: #364153;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: background 0.15s, color 0.15s;
+}
+
+@media (hover: hover) {
+  .mobile-nav-links a:hover {
+    background: #f9fafb;
+    color: #2563eb;
+  }
+
+  .icon-btn:hover {
+    background: #f3f4f6;
+    color: #111827;
   }
 }

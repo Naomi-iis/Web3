@@ -9,7 +9,7 @@
     <nav class="main-nav">
       <a href="index.html">Products</a>
       <a href="#">Categories</a>
-      <a href="#">Deals</a>
+      <a href="deals.html">Deals</a>
       <a href="about.html">About</a>
     </nav>
     <!--search and cart-->
@@ -22,7 +22,7 @@
         </svg>
       </button>
     <!-- cart -->
-      <a href="#" class="icon-btn cart-btn" aria-label="Shopping cart">
+      <a href="cart.html" class="icon-btn cart-btn" aria-label="Shopping cart">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <circle cx="8" cy="21" r="1"></circle>
           <circle cx="19" cy="21" r="1"></circle>
@@ -31,7 +31,7 @@
         <span class="cart-badge" id="cartBadge"></span>
       </a>
       <!--menu for mobil-->
-      <button class="icon-btn menu-btn" aria-label="Menu">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -40,4 +40,14 @@
       </button>
     </div>
   </div>
+</div>
+
+<!--mobile nav drawer-->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <nav class="mobile-nav-links">
+    <a href="index.html">Products</a>
+    <a href="#">Categories</a>
+    <a href="deals.html">Deals</a>
+    <a href="about.html">About</a>
+  </nav>
 </div>
