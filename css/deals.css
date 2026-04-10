@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.deals-main {
+  padding: 48px 0 64px;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+}
+
+/* Heading */
+.deals-heading {
+  margin-bottom: 32px;
+}
+
+.deals-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.deals-tag-icon {
+  width: 28px;
+  height: 28px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.deals-heading h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.deals-subtitle {
+  font-size: 16px;
+  color: #4a5565;
+  margin: 0;
+}
+
+/* Flash Sale Banner */
+.flash-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #4f6ef7 0%, #9333ea 100%);
+  border-radius: 16px;
+  padding: 28px 36px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.flash-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  color: #fff;
+}
+
+.flash-sub {
+  font-size: 16px;
+  margin: 0;
+  color: #dbeafe;
+}
+
+.flash-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  font-size: 16px;
+}
+
+.flash-banner-right svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Products Grid */
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 1024px) {
+  .deals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .deals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Deals cards override */
+.deals-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.deals-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px);
+}
+
+/* Deal badge on card */
+.deals-card .product-image {
+  position: relative;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.deal-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: #ef4444;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+/* Price with discount */
+.price-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.product-price-sale {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.product-price-original {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+/* CTA */
+.deals-cta {
+  text-align: center;
+  padding: 16px 0 8px;
+}
+
+.deals-cta p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 16px;
+}
+
+.deals-cta-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.deals-cta-btn:hover {
+  background: #1d4ed8;
+}

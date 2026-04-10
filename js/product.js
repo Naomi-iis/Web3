@@ -46,7 +46,7 @@ function renderBreadcrumb(product) {
 }
 
 //Product detail
-function renderProduct(product) {
+function renderProduct(product, discount = 0) {
   const specsEntries = Object.entries(product.specs || {});
   const highlightEntries = specsEntries.slice(0, 3);
   const reviews = product.reviews || ((product.id * 137) % 400 + 50); //от 50 до 449
@@ -90,7 +90,13 @@ function renderProduct(product) {
         </div>
 
         <div class="product-price-row">
-          <span class="product-price">$${product.price.toFixed(2)}</span>
+          ${discount > 0 ? `
+          <div class="product-price-discount-group">
+            <span class="product-price product-price--sale">$${(product.price * (1 - discount / 100)).toFixed(2)}</span>
+            <span class="product-price--original">$${product.price.toFixed(2)}</span>
+            <span class="product-price--badge">-${discount}%</span>
+          </div>` : `
+          <span class="product-price">$${product.price.toFixed(2)}</span>`}
           <span class="free-shipping">Free shipping</span>
         </div>
 
@@ -234,7 +240,10 @@ function renderRelated(product) {
 
 //Init
 async function init() {
-  const id = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'));
+  const discount = parseInt(params.get('discount')) || 0;
+
   const res = await fetch('./data/products.json');
   allProducts = await res.json();
 
@@ -247,7 +256,7 @@ async function init() {
 
   document.title = `${product.name} — TechStore`;
   renderBreadcrumb(product);
-  renderProduct(product);
+  renderProduct(product, discount);
   renderRelated(product);
   updateCartBadge();
 }

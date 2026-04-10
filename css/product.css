@@ -223,6 +223,34 @@ body {
   color: #2563eb;
 }
 
+.product-price-discount-group {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.product-price--sale {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.product-price--original {
+  font-size: 18px;
+  font-weight: 400;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.product-price--badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #ef4444;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
 .free-shipping { font-size: 13px; color: #6b7280; }
 
 /* Key Highlights */
