@@ -8,7 +8,7 @@
     <!--navi-->
     <nav class="main-nav">
       <a href="index.html">Products</a>
-      <a href="#">Categories</a>
+      <a href="categories.html">Categories</a>
       <a href="deals.html">Deals</a>
       <a href="about.html">About</a>
     </nav>
@@ -46,7 +46,7 @@
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <nav class="mobile-nav-links">
     <a href="index.html">Products</a>
-    <a href="#">Categories</a>
+    <a href="categories.html">Categories</a>
     <a href="deals.html">Deals</a>
     <a href="about.html">About</a>
   </nav>

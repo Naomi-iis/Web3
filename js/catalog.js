@@ -2,6 +2,7 @@ let allProducts = [];
 let activeRatings = [];// выбранные оценки, тип 3 и 4
 let minPrice = 0;
 let maxPrice = 3000;
+let activeCategory = ''; // категория из URL
 
 // звёзды
 function renderStars(rating, id) {
@@ -60,6 +61,8 @@ function getFilteredProducts() {
 
   for (let i = 0; i < allProducts.length; i++) {
     const p = allProducts[i];
+    // фильтр категория
+    if (activeCategory && p.category.toLowerCase() !== activeCategory) continue;
     // фильтр цена
     if (p.price < minPrice || p.price > maxPrice) continue;
     // фильтр рейтинг
@@ -226,12 +229,35 @@ function initClearFilters() {
   });
 }
 
-// пуск
+// категория из URL
+function initCategoryFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('category');
+  if (!cat) return;
+
+  activeCategory = cat.toLowerCase();
+
+  const label = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
+  const title = document.getElementById('catalogTitle');
+  const subtitle = document.getElementById('catalogSubtitle');
+  if (title) title.textContent = label;
+  if (subtitle) {
+    subtitle.innerHTML =
+      label + ' products &nbsp;·&nbsp; <a href="categories.html" style="color:#6b7280;text-decoration:underline;font-size:inherit">← All categories</a>';
+  }
+}
+
 async function init() {
   const res = await fetch('./data/products.json');
   allProducts = await res.json();
 
-  const prices = allProducts.map(function(p) { return p.price; });
+  initCategoryFromURL();
+
+  // макс. цена по активной категории
+  const priceSource = activeCategory
+    ? allProducts.filter(function(p) { return p.category.toLowerCase() === activeCategory; })
+    : allProducts;
+  const prices = priceSource.map(function(p) { return p.price; });
   window.PRICE_MAX = Math.max.apply(null, prices) + 50;
   maxPrice = window.PRICE_MAX;
 
