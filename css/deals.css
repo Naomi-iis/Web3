@@ -123,6 +123,8 @@ body {
 
 /* Deals cards override */
 .deals-card {
+  position: relative;
+  overflow: visible;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.2s, transform 0.2s;
@@ -133,24 +135,25 @@ body {
   transform: translateY(-2px);
 }
 
-/* Deal badge on card */
 .deals-card .product-image {
   position: relative;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
 }
 
-.deal-badge {
+/* Deal badge — привязан к карточке, может выходить за её границы */
+.deals-card .deal-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
+  top: -8px;
+  right: -8px;
+  z-index: 3;
   background: #ef4444;
   color: #fff;
   font-size: 12px;
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
+  pointer-events: none;
 }
 
 /* Price with discount */
