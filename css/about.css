@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 1488px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+/*Main*/
+.about-main {
+  background: #f9fafb;
+  flex: 1;
+  padding: 48px 0 64px;
+}
+
+/* Hero */
+.about-hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.about-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+.about-subtitle {
+  font-size: 1.125rem;
+  color: #4a5565;
+  margin: 0;
+}
+
+/*Card*/
+.about-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.card-heading {
+  font-size: 20px;
+  font-weight: 550;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+.about-card p {
+  font-size: 16px;
+  color: #4a5565;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Our Values */
+.values-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 550;
+  color: #111827;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.value-icon {
+  font-size: 1.4rem;
+  width: 48px;
+  height: 48px;
+  background: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.value-name {
+  font-size: 20px;
+  font-weight: 550;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.value-desc {
+  font-size: 14px;
+  color: #4a5565;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* Get in Touch */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .contacts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #3b82f6;
+}
+
+.contact-label {
+  font-size: 18px;
+  font-weight: 550;
+  color: #111827;
+  margin: 0 0 6px;
+}
+
+.contact-info p {
+  font-size: 15px;
+  color: #4a5565;
+  margin: 0 0 2px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
