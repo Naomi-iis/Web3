@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart — TechStore</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+  <header class="site-header"></header>
+
+  <main class="cart-main">
+    <div class="container">
+
+      <h1 class="cart-title">Shopping Cart</h1>
+
+      <div class="cart-layout">
+
+        <!-- Items -->
+        <div class="cart-items" id="cartItems"></div>
+
+        <!-- Right column -->
+        <div class="cart-sidebar">
+        <aside class="cart-summary">
+          <h2 class="summary-title">Order Summary</h2>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summarySubtotal">$0.00</span>
+          </div>
+          <div class="summary-row summary-discount" id="discountRow" style="display:none">
+            <span id="discountLabel">Discount</span>
+            <span id="summaryDiscount" class="discount-value"></span>
+          </div>
+          <div class="summary-row">
+            <span>Tax (8%)</span>
+            <span id="summaryTax">$0.00</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Total</span>
+            <span id="summaryTotal">$0.00</span>
+          </div>
+
+          <div class="promo-section">
+            <label class="promo-label">Promo Code</label>
+            <div class="promo-row">
+              <input type="text" id="promoInput" class="promo-input" placeholder="Enter code">
+              <button class="promo-btn" id="promoBtn">Apply</button>
+            </div>
+            <p class="promo-hint" id="promoHint">Try code "SAVE10" for 10% off</p>
+          </div>
+
+          <button class="checkout-btn">Proceed to Checkout</button>
+
+        </aside>
+
+        <div class="shipping-info">
+          <div class="shipping-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"></rect>
+              <path d="M16 8h4l3 5v3h-7V8z"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            Shipping Information
+          </div>
+
+          <div class="shipping-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              <p class="shipping-address-label">Delivery Address</p>
+              <p>123 Tech Street</p>
+              <p>San Francisco, CA 94105</p>
+            </div>
+          </div>
+
+          <div class="shipping-delivery">
+            <p class="shipping-delivery-label">Estimated Delivery</p>
+            <p>3-5 business days</p>
+            <p class="shipping-free">Free shipping on orders over $50</p>
+          </div>
+        </div>
+        </div><!-- /.cart-sidebar -->
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"></footer>
+</div>
+
+<script src="js/loadComponents.js"></script>
+<script src="js/header.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
