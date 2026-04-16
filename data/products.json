@@ -122,7 +122,7 @@
     "id": 7,
     "name": "Ultra-Thin Tablet Pro",
     "subtitle": "Tablets",
-    "price": 5000,
+    "price": 1500,
     "rating": 4.5,
     "category": "TABLETS",
     "images": [
@@ -139,10 +139,30 @@
     }
   },
   {
-    "id": 4,
+    "id": 15,
     "name": "Professional Laptop Pro",
     "subtitle": "Computers",
-    "price": 10000,
+    "price": 1000,
+    "rating": 4.5,
+    "category": "COMPUTERS",
+    "images": [
+      "images/note1.jpeg",
+      "images/note2.jpg",
+      "images/note3.jpg"
+    ],
+    "description": "High-performance laptop for professionals. Powerful processor and stunning display for any workflow.",
+    "specs": {
+      "Processor": "Intel Core i9",
+      "RAM": "32GB DDR5",
+      "Storage": "1TB NVMe SSD",
+      "Display": "15.6\" 4K OLED"
+    }
+  },
+   {
+    "id": 11,
+    "name": "Professional Laptop Pro",
+    "subtitle": "Computers",
+    "price": 100,
     "rating": 4.5,
     "category": "COMPUTERS",
     "images": [

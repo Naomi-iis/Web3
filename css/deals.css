@@ -1,3 +1,14 @@
+:root {
+  --clr-white:        #fff;
+  --clr-text-primary: #111827;
+  --clr-text-muted:   #4a5565;
+  --clr-text-subtle:  #6b7280;
+  --clr-text-faint:   #9ca3af;
+  --clr-blue:         #2563eb;
+  --clr-blue-hover:   #1d4ed8;
+  --clr-red:          #ef4444;
+}
+
 *,
 *::before,
 *::after {
@@ -8,7 +19,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #111827;
+  color: var(--clr-text-primary);
   line-height: 1.5;
 }
 
@@ -18,12 +29,22 @@ body {
 }
 
 .container {
-  max-width: 1560px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
-
+  padding: 0 16px;
 }
 
+@media (min-width: 1488px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+}
 /* Heading */
 .deals-heading {
   margin-bottom: 32px;
@@ -39,20 +60,20 @@ body {
 .deals-tag-icon {
   width: 28px;
   height: 28px;
-  color: #2563eb;
+  color: var(--clr-blue);
   flex-shrink: 0;
 }
 
 .deals-heading h1 {
   font-size: 28px;
   font-weight: 500;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin: 0;
 }
 
 .deals-subtitle {
   font-size: 16px;
-  color: #4a5565;
+  color: var(--clr-text-muted);
   margin: 0;
 }
 
@@ -65,14 +86,14 @@ body {
   border-radius: 16px;
   padding: 28px 36px;
   margin-bottom: 40px;
-  color: #fff;
+  color: var(--clr-white);
 }
 
 .flash-title {
   font-size: 20px;
   font-weight: 500;
   margin: 0 0 6px;
-  color: #fff;
+  color: var(--clr-white);
 }
 
 .flash-sub {
@@ -158,8 +179,8 @@ body {
   top: -8px;
   right: -8px;
   z-index: 3;
-  background: #ef4444;
-  color: #fff;
+  background: var(--clr-red);
+  color: var(--clr-white);
   font-size: 12px;
   font-weight: 600;
   padding: 5px 12px;
@@ -177,13 +198,13 @@ body {
 .product-price-sale {
   font-size: 18px;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--clr-blue);
 }
 
 .product-price-original {
   font-size: 14px;
   font-weight: 400;
-  color: #9ca3af;
+  color: var(--clr-text-faint);
   text-decoration: line-through;
 }
 
@@ -195,14 +216,14 @@ body {
 
 .deals-cta p {
   font-size: 16px;
-  color: #6b7280;
+  color: var(--clr-text-subtle);
   margin: 0 0 16px;
 }
 
 .deals-cta-btn {
   display: inline-block;
-  background: #2563eb;
-  color: #fff;
+  background: var(--clr-blue);
+  color: var(--clr-white);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -212,5 +233,5 @@ body {
 }
 
 .deals-cta-btn:hover {
-  background: #1d4ed8;
+  background: var(--clr-blue-hover);
 }

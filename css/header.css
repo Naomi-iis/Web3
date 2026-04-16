@@ -1,31 +1,19 @@
-*,
-*::before,
-*::after {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button,
-a,
-input,
-select,
-label,
-[role="button"] {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 2px solid #2563eb;
-  outline-offset: 2px;
-}
+:root {
+  --clr-white: #fff;
+  --clr-text-primary: #111827;
+  --clr-text-secondary:#374151;
+  --clr-text-muted:#4b5563;
+  --clr-bg-page:#f9fafb;
+  --clr-bg-subtle:#f3f4f6;
+  --clr-border:#e5e7eb;
+  --clr-blue:#2563eb;
+  --clr-blue-badge:#155dfc;
+  --gradient-brand: linear-gradient(135deg, #2563eb, #9333ea);
 
 .site-header {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: var(--clr-white);
   z-index: 10;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -44,7 +32,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #111827;
+  color: var(--clr-text-primary);
   text-decoration: none;
 }
 
@@ -55,10 +43,10 @@ select:focus-visible {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #2563eb, #9333ea);
+  background: var(--gradient-brand);
   font-weight: 700;
   font-size: 20px;
-  color: #fff;
+  color: var(--clr-white);
   flex-shrink: 0;
 }
 
@@ -89,14 +77,14 @@ select:focus-visible {
 }
 
 .main-nav a {
-  color: #374151;
+  color: var(--clr-text-secondary);
   text-decoration: none;
   font-size: 16px;
   transition: color 0.15s;
 }
 
 .main-nav a:hover {
-  color: #2563eb;
+  color: var(--clr-blue);
 }
 
 /*search*/
@@ -115,7 +103,7 @@ select:focus-visible {
   border-radius: 50%;
   background: transparent;
   border: none;
-  color: #4b5563;
+  color: var(--clr-text-muted);
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
   text-decoration: none;
@@ -132,8 +120,8 @@ select:focus-visible {
   height: 17px;
   padding: 0 4px;
   border-radius: 9999px;
-  background: #155dfc;
-  color: #fff;
+  background: var(--clr-blue-badge);
+  color: var(--clr-white);
   font-size: 10px;
   font-weight: 500;
   line-height: 17px;
@@ -170,7 +158,7 @@ select:focus-visible {
   left: 0;
   right: 0;
   z-index: 9;
-  background: #fff;
+  background: var(--clr-white);
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease;
@@ -181,7 +169,7 @@ select:focus-visible {
   content: '';
   display: block;
   height: 1px;
-  background: #e5e7eb;
+  background: var(--clr-border);
   margin: 0 16px;
 }
 
@@ -203,7 +191,7 @@ select:focus-visible {
 
 .mobile-nav-links a {
   padding: 8px 16px;
-  color: #364153;
+  color: var(--clr-text-secondary);
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -212,12 +200,12 @@ select:focus-visible {
 
 @media (hover: hover) {
   .mobile-nav-links a:hover {
-    background: #f9fafb;
-    color: #2563eb;
+    background: var(--clr-bg-page);
+    color: var(--clr-blue);
   }
 
   .icon-btn:hover {
-    background: #f3f4f6;
-    color: #111827;
+    background: var(--clr-bg-subtle);
+    color: var(--clr-text-primary);
   }
 }

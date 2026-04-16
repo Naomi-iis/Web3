@@ -1,11 +1,20 @@
+:root {
+  --clr-white:         #fff;
+  --clr-text-primary:   #111827;
+  --clr-text-secondary: #374151;
+  --clr-text-subtle:    #6b7280;
+  --clr-bg-subtle:      #f3f4f6;
+  --clr-blue:           #2563eb;
+  --clr-green-dark:     #059669;
+}
+
 .product-card {
-  display: block;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-white);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  text-decoration: none;
-  color: inherit;
   transition: box-shadow 0.2s;
 }
 
@@ -13,10 +22,17 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.product-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
 .product-image {
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #f3f4f6;
+  background: var(--clr-bg-subtle);
 }
 
 .product-image img {
@@ -27,7 +43,7 @@
   display: block;
 }
 
-.product-card:hover .product-image img {
+.product-card-link:hover .product-image img {
   transform: scale(1.05);
 }
 
@@ -37,7 +53,7 @@
 
 .product-name {
   font-weight: 500;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin-bottom: 8px;
   font-size: 18px;
 }
@@ -63,7 +79,7 @@
 
 .rating-value {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--clr-text-subtle);
 }
 
 .product-meta {
@@ -75,12 +91,39 @@
 .product-price {
   font-size: 18px;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--clr-blue);
 }
 
 .product-category {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--clr-text-subtle);
+}
+
+.product-card-footer {
+  padding: 0 16px 16px;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--clr-text-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background: var(--clr-text-secondary);
+}
+
+.add-to-cart-btn:disabled {
+  background: var(--clr-green-dark);
+  cursor: default;
 }
 
 /* no results message */
@@ -93,12 +136,12 @@
 .no-results-title {
   font-size: 18px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--clr-text-subtle);
   margin: 0 0 8px;
 }
 
 .no-results-sub {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--clr-text-subtle);
   margin: 0;
 }
