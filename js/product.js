@@ -1,38 +1,12 @@
 let allProducts = [];
 let currentImageIndex = 0;
 
-const STAR_PATH = 'M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z';
-
 const CART_SVG = `
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="8" cy="21" r="1"></circle>
     <circle cx="19" cy="21" r="1"></circle>
     <path d="M2 2H4L6.7 14.4C6.9 15.4 7.8 16 8.8 16H18.6C19.6 16 20.4 15.3 20.6 14.4L22 7H5"></path>
   </svg>`;
-
-function renderStars(rating, id) {
-  const full  = `<svg class="star-svg" viewBox="0 0 24 24"><path d="${STAR_PATH}" fill="#facc15" stroke="#facc15" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-  const empty = `<svg class="star-svg" viewBox="0 0 24 24"><path d="${STAR_PATH}" fill="#d1d5db" stroke="#d1d5db" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-
-  let html = '';
-  for (let i = 1; i <= 5; i++) {
-    if (i <= Math.floor(rating)) {
-      html += full;
-    } else if (i === Math.ceil(rating) && rating % 1 >= 0.5) {
-      const gid = `hg-${id}-${i}`;
-      html += `<svg class="star-svg" viewBox="0 0 24 24">
-        <defs><linearGradient id="${gid}">
-          <stop offset="50%" stop-color="#facc15"/>
-          <stop offset="50%" stop-color="#d1d5db"/>
-        </linearGradient></defs>
-        <path d="${STAR_PATH}" fill="url(#${gid})" stroke-width="0"/>
-      </svg>`;
-    } else {
-      html += empty;
-    }
-  }
-  return html;
-}
 
 //Breadcrumb
 function renderBreadcrumb(product) {
@@ -193,6 +167,17 @@ function initQuantity(product) {
   const qtyValueEl = document.getElementById('qtyValue');
   const btn = document.getElementById('addToCartBtn');
 
+  function syncBtn() {
+    const inCart = getCart().some(i => i.id === product.id);
+    if (inCart) {
+      btn.innerHTML = `${CART_SVG} In Cart`;
+      btn.disabled = true;
+    } else {
+      btn.innerHTML = `${CART_SVG} Add to Cart`;
+      btn.disabled = false;
+    }
+  }
+
   document.getElementById('qtyMinus').addEventListener('click', () => {
     if (qty > 1) { qty--; qtyValueEl.textContent = qty; }
   });
@@ -203,11 +188,12 @@ function initQuantity(product) {
   });
 
   btn.addEventListener('click', () => {
+    if (btn.disabled) return;
     for (let i = 0; i < qty; i++) addToCart(product);
-    // btn.textContent = 'Added to cart!';
-    // setTimeout(() => { btn.innerHTML = `${CART_SVG} Add to Cart`; }, 1500);
-    //было бы логичнее
+    syncBtn();
   });
+
+  syncBtn();
 }
 
 //Related products

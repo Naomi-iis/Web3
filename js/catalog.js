@@ -1,57 +1,33 @@
 let allProducts = [];
 let activeRatings = [];// выбранные оценки, тип 3 и 4
 let minPrice = 0;
-let maxPrice = 3000;
+let maxPrice;
 let activeCategory = ''; // категория из URL
-
-// звёзды
-function renderStars(rating, id) {
-  const d = 'M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z';
-  const full  = `<svg class="star-svg" viewBox="0 0 24 24"><path d="${d}"
-  fill="#facc15" stroke="#facc15" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-  const empty = `<svg class="star-svg" viewBox="0 0 24 24"><path d="${d}"
-  fill="#d1d5db" stroke="#d1d5db" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-  let html = '';
-  for (let i = 1; i <= 5; i++) {
-    if (i <= Math.floor(rating)) {
-      html += full;
-    } else if (i === Math.ceil(rating) && rating % 1 >= 0.5) {
-      const gid = `hg-${id}-${i}`;
-      html +=`<svg class="star-svg" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="${gid}">
-                    <stop offset="50%" stop-color="#facc15"/>
-                    <stop offset="50%" stop-color="#d1d5db"/>
-                  </linearGradient>
-                </defs>
-                <path d="${d}" fill="url(#${gid})" stroke-width="0"/>
-              </svg>`;
-    } else {
-      html += empty;
-    }
-  }
-  return html;
-}
 
 // карточка
 function renderCard(product) {
   return `
-    <a href="product.html?id=${product.id}" class="product-card">
-      <div class="product-image">
-        <img src="${product.images[0]}" alt="${product.name}" loading="lazy">
-      </div>
-      <div class="product-info">
-        <h3 class="product-name">${product.name}</h3>
-        <div class="product-rating">
-          <div class="stars">${renderStars(product.rating)}</div>
-          <span class="rating-value">(${product.rating})</span>
+    <div class="product-card">
+      <a href="product.html?id=${product.id}" class="product-card-link">
+        <div class="product-image">
+          <img src="${product.images[0]}" alt="${product.name}" loading="lazy">
         </div>
-        <div class="product-meta">
-          <span class="product-price">$${product.price.toFixed(2)}</span>
-          <span class="product-category">${product.category}</span>
+        <div class="product-info">
+          <h3 class="product-name">${product.name}</h3>
+          <div class="product-rating">
+            <div class="stars">${renderStars(product.rating)}</div>
+            <span class="rating-value">(${product.rating})</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-price">$${product.price.toFixed(2)}</span>
+            <span class="product-category">${product.category}</span>
+          </div>
         </div>
+      </a>
+      <div class="product-card-footer">
+        <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
       </div>
-    </a>
+    </div>
   `;
 }
 
@@ -125,6 +101,7 @@ function renderProducts() {
     html += renderCard(sorted[i]);
   }
   grid.innerHTML = html;
+  updateCartButtons();
 }
 
 // двойной рэндж
@@ -247,6 +224,36 @@ function initCategoryFromURL() {
   }
 }
 
+function updateCartButtons() {
+  const cart = getCart();
+  const inCart = new Set(cart.map(function(i) { return i.id; }));
+  const buttons = document.querySelectorAll('.add-to-cart-btn[data-id]');
+  for (let i = 0; i < buttons.length; i++) {
+    const btn = buttons[i];
+    const id = Number(btn.dataset.id);
+    if (inCart.has(id)) {
+      btn.textContent = 'In Cart';
+      btn.disabled = true;
+    } else {
+      btn.textContent = 'Add to Cart';
+      btn.disabled = false;
+    }
+  }
+}
+
+function initAddToCart() {
+  const grid = document.getElementById('productsGrid');
+  grid.addEventListener('click', function(e) {
+    const btn = e.target.closest('.add-to-cart-btn');
+    if (!btn || btn.disabled) return;
+    const id = Number(btn.dataset.id);
+    const product = allProducts.find(function(p) { return p.id === id; });
+    if (!product) return;
+    addToCart(product);
+    updateCartButtons();
+  });
+}
+
 async function init() {
   const res = await fetch('./data/products.json');
   allProducts = await res.json();
@@ -265,6 +272,7 @@ async function init() {
   initRatingFilters();
   initSort();
   initClearFilters();
+  initAddToCart();
   renderProducts();
 }
 

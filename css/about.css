@@ -1,3 +1,13 @@
+:root {
+  --clr-white:        #fff;
+  --clr-text-primary: #111827;
+  --clr-text-muted:   #4a5565;
+  --clr-bg-page:      #f9fafb;
+  --clr-border:       #e5e7eb;
+  --clr-blue-light:   #eff6ff;
+  --clr-blue-mid:     #3b82f6;
+}
+
 *,
 *::before,
 *::after {
@@ -8,7 +18,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #111827;
+  color: var(--clr-text-primary);
   line-height: 1.5;
 }
 
@@ -38,7 +48,7 @@ body {
 
 /*Main*/
 .about-main {
-  background: #f9fafb;
+  background: var(--clr-bg-page);
   flex: 1;
   padding: 48px 0 64px;
 }
@@ -53,20 +63,20 @@ body {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin: 0 0 16px;
 }
 
 .about-subtitle {
   font-size: 1.125rem;
-  color: #4a5565;
+  color: var(--clr-text-muted);
   margin: 0;
 }
 
 /*Card*/
 .about-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
   border-radius: 10px;
   padding: 32px;
   margin-bottom: 48px;
@@ -75,13 +85,13 @@ body {
 .card-heading {
   font-size: 20px;
   font-weight: 550;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin: 0 0 16px;
 }
 
 .about-card p {
   font-size: 16px;
-  color: #4a5565;
+  color: var(--clr-text-muted);
   line-height: 1.7;
   margin: 0 0 16px;
 }
@@ -98,7 +108,7 @@ body {
 .section-title {
   font-size: 20px;
   font-weight: 550;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin: 0 0 24px;
   text-align: center;
 }
@@ -110,8 +120,8 @@ body {
 }
 
 .value-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
   border-radius: 10px;
   padding: 24px 16px;
   text-align: center;
@@ -121,7 +131,7 @@ body {
   font-size: 1.4rem;
   width: 48px;
   height: 48px;
-  background: #eff6ff;
+  background: var(--clr-blue-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -132,13 +142,13 @@ body {
 .value-name {
   font-size: 20px;
   font-weight: 550;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin: 0 0 8px;
 }
 
 .value-desc {
   font-size: 14px;
-  color: #4a5565;
+  color: var(--clr-text-muted);
   line-height: 20px;
   margin: 0;
 }
@@ -165,7 +175,7 @@ body {
 .contact-icon {
   width: 40px;
   height: 40px;
-  background: #eff6ff;
+  background: var(--clr-blue-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -176,19 +186,19 @@ body {
 .contact-icon svg {
   width: 20px;
   height: 20px;
-  stroke: #3b82f6;
+  stroke: var(--clr-blue-mid);
 }
 
 .contact-label {
   font-size: 18px;
   font-weight: 550;
-  color: #111827;
+  color: var(--clr-text-primary);
   margin: 0 0 6px;
 }
 
 .contact-info p {
   font-size: 15px;
-  color: #4a5565;
+  color: var(--clr-text-muted);
   margin: 0 0 2px;
 }
 

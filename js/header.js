@@ -1,11 +1,5 @@
 const CART_KEY = 'techstore_cart';
 
-function getCart() {
-  const data = localStorage.getItem(CART_KEY);
-  if (!data) return [];
-  return JSON.parse(data);
-}
-
 function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
