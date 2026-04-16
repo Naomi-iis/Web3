@@ -9,7 +9,6 @@
   --clr-blue:#2563eb;
   --clr-blue-badge:#155dfc;
   --gradient-brand: linear-gradient(135deg, #2563eb, #9333ea);
-}
 
 .site-header {
   position: sticky;
